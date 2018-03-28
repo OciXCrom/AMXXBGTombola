@@ -224,9 +224,7 @@ startirai_tombolata(id, bool:bCheckDoubles)
 		g_aTeglene = ArrayClone(g_aZapisani)
 		g_iTeglene = g_iZapisani
 		
-		new szName[32]
-		get_user_name(id, szName, charsmax(szName))
-		send_dhudmessage(0, 0, 225, 20, -1.0, 0.3, 5.0, "%s стартира томболата!", szName)
+		send_dhudmessage(0, 0, 225, 20, -1.0, 0.3, 5.0, "%n стартира томболата!", id)
 		send_dhudmessage(0, 30, 210, 230, -1.0, 0.35, 5.0, "Има общо %i записани потребители и %i награди. Шансът за печалба е %.2f%%", g_iZapisani, g_iNagradi, g_fChance)
 		
 		new Float:fPos = 0.40
@@ -268,10 +266,7 @@ public iztegli_potrebitel()
 spri_tombolata(id)
 {
 	krai_na_tombolata(true)
-	
-	new szName[32]
-	get_user_name(id, szName, charsmax(szName))
-	send_dhudmessage(0, 245, 30, 100, -1.0, 0.6, 3.0, "%s спря томболата!", szName)
+	send_dhudmessage(0, 245, 30, 100, -1.0, 0.6, 3.0, "%n спря томболата!", id)
 }
 
 krai_na_tombolata(bool:bForced)
